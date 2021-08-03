@@ -32,7 +32,9 @@ public class MinesweeperGame {
 
             lost = play();
             if (minesweeper.isWin()) {
+                minesweeper.showBoard();
                 System.out.println("You win!");
+                return;
             }
             if (!lost) {
                 minesweeper.setFirstInput(false);

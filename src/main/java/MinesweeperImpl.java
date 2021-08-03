@@ -64,6 +64,7 @@ public class MinesweeperImpl implements Minesweeper {
         } else {
             addMine();
         }
+
     }
 
     public void findNeighbours(int row, int col) {
@@ -167,6 +168,7 @@ public class MinesweeperImpl implements Minesweeper {
             }
 
         }
+
     }
 
     public void showBoard() {
