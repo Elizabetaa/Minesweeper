@@ -8,6 +8,15 @@ public class MinesweeperImpl implements Minesweeper {
     private boolean firstInput = true;
     private int level;
 
+    public MinesweeperImpl() {
+    }
+
+    public MinesweeperImpl(int[][] board, char[][] boardForShown, boolean[][] visited,int level,int mines) {
+        this.board = board;
+        this.boardForShown = boardForShown;
+        this.visited = visited;
+    }
+
     public int getLevel() {
         return level;
     }
@@ -16,17 +25,21 @@ public class MinesweeperImpl implements Minesweeper {
         this.level = level;
     }
 
+    public void setMines(int mines) {
+        this.mines = mines;
+    }
+
     public void setFirstInput(boolean firstInput) {
         this.firstInput = firstInput;
     }
 
     public boolean isWin() {
-        int minesCount = 0;
+        int unopened = 0;
         for (char[] ints : boardForShown) {
             for (int anInt : ints) {
                 if (anInt == '-') {
-                    minesCount++;
-                    if (minesCount > level) {
+                    unopened++;
+                    if (unopened > mines) {
                         return false;
                     }
                 }

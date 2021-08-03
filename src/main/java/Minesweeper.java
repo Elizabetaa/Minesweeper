@@ -16,4 +16,7 @@ public interface Minesweeper {
     void showBoard();
 
     void initBoards();
+
+    boolean move(int row, int col);
+
 }

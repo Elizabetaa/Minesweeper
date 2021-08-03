@@ -4,6 +4,7 @@ public class MinesweeperGame {
     private static Scanner scanner;
     private static MinesweeperImpl minesweeper;
 
+
     public static void main(String[] args) {
         scanner = new Scanner(System.in);
         minesweeper = new MinesweeperImpl();
@@ -19,7 +20,6 @@ public class MinesweeperGame {
             System.out.println("Invalid level! The level must be in range 0 - 2");
             level = Integer.parseInt(scanner.nextLine());
         }
-
         minesweeper.setLevel(level);
         minesweeper.initBoards();
         minesweeper.showBoard();
